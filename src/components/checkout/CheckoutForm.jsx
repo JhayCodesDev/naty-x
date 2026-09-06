@@ -55,7 +55,7 @@ export default function CheckoutForm() {
     Order Id: ${orderId}
     
     Customer Details:
-    Name: ${customer.name}
+    Name: ${customer.fullName}
     Email: ${customer.email}
 
     Order Details
