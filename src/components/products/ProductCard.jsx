@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Heart, Plus } from 'lucide-react'
 import { formatNaira } from '../../utils/format.js'
@@ -8,6 +9,7 @@ export default function ProductCard({ product }) {
   const { isWishlisted, toggleWishlist } = useWishlist()
   const { addToCart } = useCart()
   const wishlisted = isWishlisted(product.id)
+  
 
   function handleQuickAdd(e) {
     e.preventDefault()
@@ -23,14 +25,14 @@ export default function ProductCard({ product }) {
     <Link to={`/product/${product.slug}`} className="group block">
       <div className="relative aspect-[4/5] bg-haze overflow-hidden mb-3">
         <img
-          src={product.images[0]}
+          src={product.images["Black"]}
           alt={product.name}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        {product.images[1] && (
+        {product.images["White"] && (
           <img
-            src={product.images[1]}
+            src={product?.images["White"]}
             alt=""
             aria-hidden="true"
             loading="lazy"

@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function ProductGallery({ images, name }) {
   const [active, setActive] = useState(0)
 
+  useEffect(() => {
+    setActive(0)
+  }, [images])
+
+
   return (
-    <div className="flex flex-col-reverse sm:flex-row gap-4">
+    <div className="flex flex-col-reverse sm:flex-row gap-4 self-start h-fit">
       <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-visible">
         {images.map((src, i) => (
           <button
@@ -24,7 +29,7 @@ export default function ProductGallery({ images, name }) {
         <img
           src={images[active]}
           alt={name}
-          className="w-full h-full object-cover animate-fadeUp"
+          className="w-full h-full scale-110 object-contain animate-fadeUp"
           key={active}
         />
       </div>

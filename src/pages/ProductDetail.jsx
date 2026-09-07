@@ -21,9 +21,11 @@ export default function ProductDetail() {
 
   const [size, setSize] = useState(product?.sizes[0])
   const [color, setColor] = useState(product?.colors[0])
+  const selectedImages =  product.images[color]
   const [quantity, setQuantity] = useState(1)
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false)
   const [added, setAdded] = useState(false)
+
 
   useEffect(() => {
     if (product) document.title = `${product.name} — NATY X`
@@ -52,7 +54,7 @@ export default function ProductDetail() {
       </nav>
 
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-        <ProductGallery images={product.images} name={product.name} />
+        <ProductGallery images={selectedImages} name={product.name} />
 
         <div className="max-w-lg">
           <h1 className="text-2xl sm:text-3xl mb-2">{product.name}</h1>
@@ -91,6 +93,7 @@ export default function ProductDetail() {
             <p className="eyebrow mb-2">Color</p>
             <div className="flex flex-wrap gap-2">
               {product.colors.map((c) => (
+                
                 <button
                   key={c}
                   onClick={() => setColor(c)}
