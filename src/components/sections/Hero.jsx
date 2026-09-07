@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative h-[92vh] min-h-[560px] w-full overflow-hidden bg-ink">
       <img
-        src="public/product-images/NXT-hero-banner.jpg"
+        src="/public/product-images/NXT-hero-banner.jpg"
         alt="NATY X streetwear campaign — model wearing the current collection"
         className="absolute inset-0 w-full h-full object-cover object-right opacity-80"
       />
