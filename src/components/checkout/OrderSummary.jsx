@@ -12,7 +12,7 @@ export default function OrderSummary() {
         {cartItems.map((item) => (
           <div key={item.key} className="flex gap-3">
             <div className="relative w-14 h-16 bg-paper shrink-0">
-              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+              <img src={item.images} alt={item.name} className="w-full h-full object-cover" />
               <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-ink text-paper text-[10px] flex items-center justify-center">
                 {item.quantity}
               </span>

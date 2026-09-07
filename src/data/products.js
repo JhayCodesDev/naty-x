@@ -1,8 +1,5 @@
 // Demo product catalog for NATY X.
 
-// const  = (seed, w = 900, h = 1125) => `https://picsum.photos/seed/${seed}/${w}/${h}`
-// console.log()
-
 export const CATEGORIES = [
   {
     id: "tees",
